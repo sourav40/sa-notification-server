@@ -15,7 +15,6 @@ public class NotificationServerApplication implements CommandLineRunner {
     private Consumer consumer;
 
     public static void main(String[] args) {
-        System.out.println("logging the application...");
         new SpringApplicationBuilder(NotificationServerApplication.class)
                 .sources(NotificationServerApplication.class)
                 .run(args);

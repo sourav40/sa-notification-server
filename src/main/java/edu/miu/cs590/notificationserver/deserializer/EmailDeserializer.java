@@ -57,4 +57,5 @@ public class EmailDeserializer implements Deserializer<EmailDto> {
     public void close() {
         // nothing to do
     }
+
 }

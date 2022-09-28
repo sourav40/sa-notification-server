@@ -71,8 +71,8 @@ public class EmailSenderImpl implements EmailSender {
         mailSender.setHost("smtp.gmail.com");
         mailSender.setPort(587);
 
-        mailSender.setUsername("souravshrestha40@gmail.com");
-        mailSender.setPassword("esscdmkhspdzxiyz");
+        mailSender.setUsername("test@gmail.com");
+        mailSender.setPassword("testcode");
         return mailSender;
     }
 

@@ -27,7 +27,7 @@ public class EmailSenderImpl implements EmailSender {
     private EmailRepository emailRepository;
 
     @Override
-    public boolean   sendEmail(EmailDto emailDto) {
+    public boolean sendEmail(EmailDto emailDto) {
 
         JavaMailSender emailSender = configureJavaMail();
         MimeMessage mimeMessage = emailSender.createMimeMessage();
@@ -35,7 +35,7 @@ public class EmailSenderImpl implements EmailSender {
 
         try {
             helper.setText(emailDto.getMessage(), true);
-            helper.setFrom(emailDto.getFrom());
+//            helper.setFrom(emailDto.getFrom());
             helper.setTo(emailDto.getTo());
             helper.setSubject(emailDto.getSubject());
         } catch (MessagingException e) {
@@ -68,13 +68,10 @@ public class EmailSenderImpl implements EmailSender {
 
     private JavaMailSenderImpl setJavaMailSender() {
         JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
-        mailSender.setHost("smtp.gmail.com");
-        mailSender.setPort(587);
-
-        mailSender.setUsername("test@gmail.com");
-        mailSender.setPassword("testcode");
+        mailSender.setHost("smtp.mailtrap.io");
+        mailSender.setPort(2525);
+        mailSender.setUsername("9510a862d6b9cc");
+        mailSender.setPassword("020374c1c08d88");
         return mailSender;
     }
-
 }
-
